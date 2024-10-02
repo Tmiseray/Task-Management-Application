@@ -1,9 +1,11 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, stream_template, stream_with_context
 from flask_sqlalchemy import SQLAlchemy
+from jinja2 import FileSystemLoader
 from datetime import date
 from password import my_password
 
-app = Flask(__name__, template_folder='templates')
+# loader = FileSystemLoader('templates')
+app = Flask(__name__, template_folder = 'templates')
 app.jinja_env.auto_reload = True
 app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql+mysqlconnector://root:{my_password}@localhost/task_manager_db'
 db = SQLAlchemy(app)
@@ -27,14 +29,14 @@ class Task(db.Model):
 # Home route
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return stream_template('index.html')
 
 # Dashboard route
 @app.route('/dashboard')
 def dashboard():
     tasks = Task.query.all()
     # tasks = [{"title": "Task 1", "progress": 50}, {"title": "Task 2", "progress": 80}]
-    return render_template('dashboard.html', tasks=tasks)
+    return stream_template('dashboard.html', tasks=tasks)
 
 # Create task route
 @app.route('/task/create', methods=['GET', 'POST'])
@@ -57,13 +59,13 @@ def create_task():
             print(f"Error creating task: {e}")
             return "Error: Task could not be created"
         
-    return render_template('create-task.html')
+    return stream_template('create_task.html')
 
 # Task Details route
 @app.route('/task/<int:task_id>')
 def task_details(task_id):
     task = Task.query.get_or_404(task_id)
-    return render_template('task-details.html', task=task)
+    return stream_template('task_details.html', task=task)
 
 # Edit task route
 @app.route('/task/edit/<int:task_id>', methods=['GET', 'POST'])
@@ -79,7 +81,14 @@ def edit_task(task_id):
         task.progress = request.form['progress']
         db.session.commit()
         return redirect(url_for('dashboard'))
-    return render_template('edit-task.html', task=task)
+    return stream_template('edit_task.html', task=task)
+
+# # Task Count Route
+# @app.route('', methods=['GET'])
+# def total_tasks():
+#     tasks = Task.query.all()
+#     total = len(tasks)
+#     return total
 
 if __name__ == '__main__':
     app.run(debug=True)

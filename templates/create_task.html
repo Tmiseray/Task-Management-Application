@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>TaskFocusPrime - Edit Task</title>
+        <title>TaskFocusPrime - Task Creation</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
@@ -44,22 +44,6 @@
             })
             })()
         </script>
-        <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
-            <symbol id="check-circle-fill" viewBox="0 0 16 16">
-              <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-            </symbol>
-            <symbol id="exclamation-triangle-fill" viewBox="0 0 16 16">
-              <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-            </symbol>
-            <symbol id="shield-lock" viewBox="0 0 16 16">
-                <path d="M5.338 1.59a61 61 0 0 0-2.837.856.48.48 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.7 10.7 0 0 0 2.287 2.233c.346.244.652.42.893.533q.18.085.293.118a1 1 0 0 0 .101.025 1 1 0 0 0 .1-.025q.114-.034.294-.118c.24-.113.547-.29.893-.533a10.7 10.7 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.8 11.8 0 0 1-2.517 2.453 7 7 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7 7 0 0 1-1.048-.625 11.8 11.8 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 63 63 0 0 1 5.072.56"/>
-                <path d="M9.5 6.5a1.5 1.5 0 0 1-1 1.415l.385 1.99a.5.5 0 0 1-.491.595h-.788a.5.5 0 0 1-.49-.595l.384-1.99a1.5 1.5 0 1 1 2-1.415"/>
-            </symbol>
-            <symbol id="eye" viewBox="0 0 16 16">
-                <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z"/>
-                <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0"/>
-            </symbol>
-        </svg>
         <style>
         /* Custom Styling for Cards and Calendar */
         .past-event {
@@ -101,20 +85,25 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home</a>
+                            <a class="nav-link" href="/">Home</a>
                         </li>
+                        <div class="vr text-warning-emphasis p-0"></div>
                         <li class="nav-item">
-                            <a class="nav-link" href="dashboard.html">Dashboard</a>
+                            <a class="nav-link" href="/dashboard">Dashboard</a>
                         </li>
+                        <div class="vr text-warning-emphasis p-0"></div>
                         <li class="nav-item">
-                            <a class="nav-link" href="create-task.html">Task Creation</a>
+                            <a class="nav-link" href="task/create">Task Creation</a>
                         </li>
-                        <li class="nav-item">
+                        <div class="vr text-warning-emphasis p-0"></div>
+                        <!-- <li class="nav-item">
                             <a class="nav-link" href="task-details.html">Task Details</a>
-                        </li>
+                        </li> -->
+                        <!-- TODO add app routes for these! -->
                         <li class="nav-item">
                             <a class="nav-link" href="registration.html">Register</a>
                         </li>
+                        <div class="vr text-warning-emphasis p-0"></div>
                         <li class="nav-item">
                             <a class="nav-link" href="login.html">Login</a>
                         </li>
@@ -127,25 +116,25 @@
             <div class="col-md-1"></div>
             <div class="col-md-10">
                 <div class="p-5 border border-warning-subtle bg-success-subtle rounded-3" style="box-shadow: 0 0 21px 7px rgba(102, 104, 0, 0.349)">
-                    <h1 class="fw-light text-decoration-underline">Edit Task</h1>
-                    <p class="fw-lighter fs-4">Make any necessary adjustments to your task.</p>
+                    <h1 class="fw-light">Task Creation</h1>
+                    <p class="fw-lighter fs-4">Fill in the form below with all your task's details.</p>
                 </div>
             </div>
             <div class="col-md-1"></div>
         </header>
 
-        <hr class="border-warning border-3">
+        <hr class="border-warning border-3 ms-3">
 
         <section>
             <div class="container-xxl mb-3 mt-5">
                 <div class="row">
                     <!-- Left side: Task Overview and Forms -->
                     <div class="col-12 col-md-6 mb-4">
-                        <form method="post" style="box-shadow: 0 0 21px 7px var(--bs-success-bg-subtle)" class="p-3 border border-success-subtle rounded bg-secondary-subtle needs-validation" novalidate>
+                        <form action="/task/create" method="post" style="box-shadow: 0 0 21px 7px var(--bs-success-bg-subtle)" class="p-3 border border-success-subtle rounded bg-secondary-subtle needs-validation" novalidate>
                             <legend class="text-decoration-underline mb-3">Task Details</legend>
                             <div class="mb-3">
                                 <label for="title" class="form-label text-success-emphasis">Task Title:</label>
-                                <input type="text" class="form-control border border-warning-subtle" id="title" name="title" value="{{task.title}}" required>
+                                <input type="text" class="form-control border border-warning-subtle" id="title" name="title" placeholder="Enter task's title here" required>
                                 <div class="valid-feedback mt-2">
                                     <div class="alert alert-success d-flex justify-content-center align-items-center" role="alert">
                                         <svg class="bi me-5" width="64" height="64" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
@@ -165,11 +154,11 @@
                             </div>
                             <div class="mb-3">
                                 <label for="assigned-to" class="form-label text-success-emphasis">Assigned To:</label>
-                                <input type="text" class="form-control border border-warning-subtle" id="assigned-to" name="assigned-to" value="{{task.assigned_to}}">
+                                <input type="text" class="form-control border border-warning-subtle" id="assigned-to" name="assigned-to" placeholder="Enter the name whom task is assigned to">
                             </div>
                             <div class="mb-3">
                                 <label for="description" class="form-label text-success-emphasis">Description:</label>
-                                <textarea class="form-control border border-warning-subtle" id="description" name="description" value="{{task.description}}" required></textarea>
+                                <textarea class="form-control border border-warning-subtle" id="description" name="description" placeholder="Enter the task's description here" required></textarea>
                                 <div class="valid-feedback mt-2">
                                     <div class="alert alert-success d-flex justify-content-center align-items-center" role="alert">
                                         <svg class="bi me-5" width="64" height="64" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
@@ -190,14 +179,14 @@
                             <div class="mb-3">
                                 <label for="priority" class="form-label text-success-emphasis">Priority:</label>
                                 <select class="form-select border border-warning-subtle" name="priority" id="priority">
-                                    <option value="Low" {% if task.priority == 'Low' %}selected{% endif %}>Low</option>
-                                    <option value="Medium" {% if task.priority == 'Medium' %}selected{% endif %}>Medium</option>
-                                    <option value="High" {% if task.priority == 'High' %}selected{% endif %}>High</option>
+                                    <option value="Low">Low</option>
+                                    <option value="Medium" selected>Medium</option>
+                                    <option value="High">High</option>
                                 </select>
                             </div>
                             <div class="mb-3">
                                 <label for="start-date" class="form-label text-success-emphasis">Start Date:</label>
-                                <input type="date" class="form-control border border-warning-subtle" id="start-date" name="start-date" value="{{task.start_date}}" required>
+                                <input type="date" class="form-control border border-warning-subtle" id="start-date" name="start-date" required>
                                 <div class="valid-feedback mt-2">
                                     <div class="alert alert-success d-flex justify-content-center align-items-center" role="alert">
                                         <svg class="bi me-5" width="64" height="64" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
@@ -217,11 +206,11 @@
                             </div>
                             <div class="mb-3">
                                 <label for="due-date" class="form-label text-success-emphasis">Due Date:</label>
-                                <input type="date" class="form-control border border-warning-subtle" id="due-date" name="due-date" value="{{task.due_date}}">
+                                <input type="date" class="form-control border border-warning-subtle" id="due-date" name="due-date">
                             </div>
                             <div class="mb-3">
-                                <label for="progress" class="form-label text-success-emphasis">Progress (%):</label>
-                                <input type="number" class="form-control border border-warning-subtle" id="progress" name="progress" value="{{task.progress}}" min="0" max="100">
+                                <label for="progress" class="form-label text-success-emphasis">Progress:</label>
+                                <input type="number" class="form-control border border-warning-subtle" id="progress" name="progress" placeholder="0-100" value="0" min="0" max="100">
                             </div>
                             <div class="row mb-2">
                                 <div class="col">
@@ -265,7 +254,7 @@
             </div>
         </section>
 
-        <hr class="border-warning border-3">
+        <hr class="border-warning border-3 ms-3">
 
         <footer class="container-fluid my-3">
             <div class="row text-center align-items-center">
@@ -299,7 +288,7 @@
                     </div>
                 </div>
                 <div class="col">
-                    <img src="../TaskFocusPrime.png" alt="TaskFocusPrime" width="144">
+                    <img src="{{ url_for('static', filename='TaskFocusPrime.png') }}" alt="TaskFocusPrime" width="144">
                 </div>
                 <div class="p-2 col">
                     <div class="row text-center">

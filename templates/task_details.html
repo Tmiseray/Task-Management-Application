@@ -30,20 +30,25 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Home</a>
+                            <a class="nav-link" href="/">Home</a>
                         </li>
+                        <div class="vr text-warning-emphasis p-0"></div>
                         <li class="nav-item">
-                            <a class="nav-link" href="dashboard.html">Dashboard</a>
+                            <a class="nav-link" href="/dashboard">Dashboard</a>
                         </li>
+                        <div class="vr text-warning-emphasis p-0"></div>
                         <li class="nav-item">
-                            <a class="nav-link" href="create-task.html">Task Creation</a>
+                            <a class="nav-link" href="/task/create">Task Creation</a>
                         </li>
-                        <li class="nav-item">
+                        <div class="vr text-warning-emphasis p-0"></div>
+                        <!-- <li class="nav-item">
                             <a class="nav-link" href="task-details.html">Task Details</a>
-                        </li>
+                        </li> -->
+                        <!-- TODO add app routes for these! -->
                         <li class="nav-item">
                             <a class="nav-link" href="registration.html">Register</a>
                         </li>
+                        <div class="vr text-warning-emphasis p-0"></div>
                         <li class="nav-item">
                             <a class="nav-link" href="login.html">Login</a>
                         </li>
@@ -65,7 +70,7 @@
             <div class="col-md-1"></div>
         </header>
 
-        <hr class="border-warning border-3">
+        <hr class="border-warning border-3 ms-3">
 
         <section class="container-xxl mb-3 mt-5">
             <div class="row">
@@ -106,7 +111,7 @@
             </div>
         </section>
 
-        <hr class="border-warning border-3">
+        <hr class="border-warning border-3 ms-3">
 
         <footer class="container-fluid my-3">
             <div class="row text-center align-items-center">
@@ -140,7 +145,7 @@
                     </div>
                 </div>
                 <div class="col">
-                    <img src="../TaskFocusPrime.png" alt="TaskFocusPrime" width="144">
+                    <img src="{{ url_for('static', filename='TaskFocusPrime.png') }}" alt="TaskFocusPrime" width="144">
                 </div>
                 <div class="p-2 col">
                     <div class="row text-center">

@@ -41,6 +41,10 @@
             -webkit-text-fill-color: transparent;
             -webkit-background-clip: text;
         }
+        .card-text {
+            color: var(--bs-warning);
+            font-weight: light;
+        }
         </style>
     </head>
 
@@ -79,7 +83,7 @@
         <header class="p-5 text-center mb-3 row">
             <div class="col-md-1"></div>
             <div class="col-md-10">
-                <div class="p-5 border border-warning-subtle bg-success-subtle rounded-3" style="box-shadow: 0 0 21px 3px rgba(102, 104, 0, 0.349)">
+                <div class="p-5 border border-warning-subtle bg-success-subtle rounded-3" style="box-shadow: 0 0 21px 7px rgba(102, 104, 0, 0.349)">
                     <h1 class="fw-light">Task Manager Dashboard</h1>
                     <p class="fw-lighter fs-4">Manage your tasks efficiently with TaskFocusPrime!</p>
                 </div>
@@ -94,8 +98,8 @@
                 <div class="row">
                     <!-- Left side: Full month interactive calendar -->
                     <div class="col-12 col-md-6 mb-4">
-                        <div class="card border border-success-subtle bg-warning-subtle" style="box-shadow: 0 0 21px 7px var(--bs-success-bg-subtle)">
-                            <div class="card-body text-light">
+                        <div class="card border border-success-subtle bg-secondary-subtle" style="box-shadow: 0 0 21px 7px var(--bs-success-bg-subtle)">
+                            <div class="card-body text-warning-emphasis">
                                 <div id='calendar-container'>
                                     <div id='calendar'></div>
                                 </div>
@@ -108,9 +112,9 @@
                         <!-- Task Overview Cards -->
                         <div class="row">
                             <div class="col mb-5">
-                                <div class="card border border-success-subtle bg-warning-subtle" style="box-shadow: 0 0 13px 9px var(--bs-success-bg-subtle)">
-                                    <div class="card-body text-light">
-                                        <h3 class="card-title">Tasks Overview</h5>
+                                <div class="card border border-success-subtle bg-secondary-subtle" style="box-shadow: 0 0 13px 9px var(--bs-success-bg-subtle)">
+                                    <div class="card-body">
+                                        <h3 class="card-title text-warning-emphasis">Tasks Overview</h5>
                                         <p class="card-text">You have <strong>5</strong> tasks pending today!</p>
                                         <button class="btn btn-lg btn-outline-warning">View Tasks</button>
                                     </div>
@@ -120,9 +124,9 @@
     
                         <div class="row">
                             <div class="col mb-5">
-                                <div class="card border border-success-subtle bg-warning-subtle" style="box-shadow: 0 0 21px 7px var(--bs-success-bg-subtle)">
-                                    <div class="card-body text-light">
-                                        <h3 class="card-title">Progress Overview</h3>
+                                <div class="card border border-success-subtle bg-secondary-subtle" style="box-shadow: 0 0 21px 7px var(--bs-success-bg-subtle)">
+                                    <div class="card-body">
+                                        <h3 class="card-title text-warning-emphasis">Progress Overview</h3>
                                         <div class="accordion" id="taskAccordion">
                                             {% if tasks %}
                                                 {% for task in tasks %}
@@ -135,8 +139,8 @@
                                                         </h4>
                                                         <div id="collapse{{task.task_id}}" class="accordion-collapse collapse">
                                                             <div class="accordion-body">
-                                                                <p><a href="{{url_for('task-details', task_id=task.task_id)}}" class="btn btn-outline-success">View Task Details</a></p>
-                                                                <p><a href="{{url_for('edit-task', task_id=task.task_id)}}" class="btn btn-outline-warning">Edit Task</a></p>
+                                                                <p class="mt-3"><a href="{{url_for('task-details', task_id=task.task_id)}}" class="btn btn-outline-success w-100">View Task Details</a></p>
+                                                                <p><a href="{{url_for('edit-task', task_id=task.task_id)}}" class="btn btn-outline-warning w-100">Edit Task</a></p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -153,12 +157,20 @@
                         <div class="row">
                             <!-- Task Action Buttons -->
                             <div class="col mb-5">
-                                <div class="card border border-success-subtle bg-warning-subtle" style="box-shadow: 0 0 21px 7px var(--bs-success-bg-subtle)">
-                                    <div class="card-body text-light">
-                                        <h5 class="card-title">Task Actions</h5>
+                                <div class="card border border-success-subtle bg-secondary-subtle" style="box-shadow: 0 0 21px 7px var(--bs-success-bg-subtle)">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-warning-emphasis">Task Actions</h5>
                                         <p class="card-text">Manage your tasks with quick actions:</p>
-                                        <a class="btn btn-outline-success" role="button" href="create-task.html">New Task</a>
-                                        <a class="btn btn-outline-warning" role="button" href="edit-task.html">Edit Task</a>
+                                        <div class="card-footer">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <a class="btn btn-outline-success w-100" role="button" href="create-task.html">New Task</a>
+                                                </div>
+                                                <div class="col">
+                                                    <a class="btn btn-outline-warning w-100" role="button" href="edit-task.html">Edit Task</a>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -202,7 +214,7 @@
                     </div>
                 </div>
                 <div class="col">
-                    <img src="TaskFocusPrime.png" alt="TaskFocusPrime" width="144">
+                    <img src="../TaskFocusPrime.png" alt="TaskFocusPrime" width="144">
                 </div>
                 <div class="p-2 col">
                     <div class="row text-center">

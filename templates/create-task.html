@@ -85,7 +85,7 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Home</a>
+                            <a class="nav-link" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="dashboard.html">Dashboard</a>
@@ -110,7 +110,7 @@
         <header class="p-5 text-center mb-3 row">
             <div class="col-md-1"></div>
             <div class="col-md-10">
-                <div class="p-5 border border-warning-subtle bg-success-subtle rounded-3" style="box-shadow: 0 0 21px 3px rgba(102, 104, 0, 0.349)">
+                <div class="p-5 border border-warning-subtle bg-success-subtle rounded-3" style="box-shadow: 0 0 21px 7px rgba(102, 104, 0, 0.349)">
                     <h1 class="fw-light">Task Creation</h1>
                     <p class="fw-lighter fs-4">Fill in the form below with all your task's details.</p>
                 </div>
@@ -130,8 +130,22 @@
                             <div class="mb-3">
                                 <label for="title" class="form-label text-success-emphasis">Task Title:</label>
                                 <input type="text" class="form-control border border-warning-subtle" id="title" name="title" placeholder="Enter task's title here" required>
-                                <div class="valid-feedback">Valid Entry!</div>
-                                <div class="invalid-feedback">Please enter a task title.</div>
+                                <div class="valid-feedback mt-2">
+                                    <div class="alert alert-success d-flex justify-content-center align-items-center" role="alert">
+                                        <svg class="bi me-5" width="64" height="64" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+                                        <div>
+                                            Valid Entry!
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="invalid-feedback mt-2">
+                                    <div class="alert alert-danger d-flex justify-content-center align-items-center" role="alert">
+                                        <svg class="bi me-5" width="64" height="64" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+                                        <div>
+                                            Please enter the task's title
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="mb-3">
                                 <label for="assigned-to" class="form-label text-success-emphasis">Assigned To:</label>
@@ -140,8 +154,22 @@
                             <div class="mb-3">
                                 <label for="description" class="form-label text-success-emphasis">Description:</label>
                                 <textarea class="form-control border border-warning-subtle" id="description" name="description" placeholder="Enter the task's description here" required></textarea>
-                                <div class="valid-feedback">Valid Entry!</div>
-                                <div class="invalid-feedback">Please enter task's description.</div>
+                                <div class="valid-feedback mt-2">
+                                    <div class="alert alert-success d-flex justify-content-center align-items-center" role="alert">
+                                        <svg class="bi me-5" width="64" height="64" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+                                        <div>
+                                            Valid Entry!
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="invalid-feedback mt-2">
+                                    <div class="alert alert-danger d-flex justify-content-center align-items-center" role="alert">
+                                        <svg class="bi me-5" width="64" height="64" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+                                        <div>
+                                            Please enter the task's description
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="mb-3">
                                 <label for="priority" class="form-label text-success-emphasis">Priority:</label>
@@ -154,8 +182,22 @@
                             <div class="mb-3">
                                 <label for="start-date" class="form-label text-success-emphasis">Start Date:</label>
                                 <input type="date" class="form-control border border-warning-subtle" id="start-date" name="start-date" required>
-                                <div class="valid-feedback">Valid Entry!</div>
-                                <div class="invalid-feedback">Please enter a valid start date.</div>
+                                <div class="valid-feedback mt-2">
+                                    <div class="alert alert-success d-flex justify-content-center align-items-center" role="alert">
+                                        <svg class="bi me-5" width="64" height="64" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+                                        <div>
+                                            Valid Entry!
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="invalid-feedback mt-2">
+                                    <div class="alert alert-danger d-flex justify-content-center align-items-center" role="alert">
+                                        <svg class="bi me-5" width="64" height="64" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+                                        <div>
+                                            Please enter a valid start date
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="mb-3">
                                 <label for="due-date" class="form-label text-success-emphasis">Due Date:</label>
@@ -165,8 +207,33 @@
                                 <label for="progress" class="form-label text-success-emphasis">Progress:</label>
                                 <input type="number" class="form-control border border-warning-subtle" id="progress" name="progress" placeholder="0-100" value="0" min="0" max="100">
                             </div>
-                            <button type="submit" class="btn btn-outline-success">Create Task</button>
+                            <div class="row mb-2">
+                                <div class="col">
+                                    <a href="{{url_for('dashboard')}}" class="btn btn-outline-danger w-100">Cancel</a>
+                                </div>
+                                <div class="col">
+                                    <button type="submit" class="btn btn-outline-success w-100">Save Changes</button>
+                                </div>
+                            </div>
                         </form>
+                        <script>
+                            (() => {
+                            'use strict'
+                
+                            const forms = document.querySelectorAll('.needs-validation')
+                
+                            Array.from(forms).forEach(form => {
+                                form.addEventListener('submit', event => {
+                                if (!form.checkValidity()) {
+                                    event.preventDefault()
+                                    event.stopPropagation()
+                                }
+                
+                                form.classList.add('was-validated')
+                                }, false)
+                            })
+                            })()
+                        </script>
                     </div>
                     <!-- Right side: Full month interactive calendar -->
                     <div class="col-12 col-md-6 mb-4">
@@ -216,7 +283,7 @@
                     </div>
                 </div>
                 <div class="col">
-                    <img src="TaskFocusPrime.png" alt="TaskFocusPrime" width="144">
+                    <img src="../TaskFocusPrime.png" alt="TaskFocusPrime" width="144">
                 </div>
                 <div class="p-2 col">
                     <div class="row text-center">

@@ -55,12 +55,11 @@
         <header class="p-5 mb-4 text-center row">
             <div class="col-md-1"></div>
             <div class="col-md-10">
-                <div class="h-100 p-5 border border-warning-subtle bg-success-subtle rounded-3">
-                    <h1 class="fw-light">Enter Header Here</h1>
+                <div class="p-5 border border-warning-subtle bg-success-subtle rounded-3" style="box-shadow: 0 0 21px 7px rgba(102, 104, 0, 0.349)">
+                    <h1 class="fw-light text-decoration-underline">Task Details</h1>
                     <p class="fw-lighter fs-4">
-                        "Enter welcome message here."
+                        View your task's full details below!
                     </p>
-                    <a href="#features" class="btn btn-outline-warning">Learn More!</a>
                 </div>
             </div>
             <div class="col-md-1"></div>
@@ -68,17 +67,43 @@
 
         <hr class="border-warning border-3">
 
-        <section class="container my-5 p-3 rounded bg-success-subtle" style="box-shadow: 0 0 21px 3px rgba(102, 104, 0, 0.349)">
-            <h2 class="mb-4 text-decoration-underline text-center fw-light">Task: {{task.title}}</h2>
-            <p><strong>Assigned To:</strong> {{task.assigned_to}}</p>
-            <p><strong>Description:</strong> {{task.description}}</p>
-            <p><strong>Priority:</strong> {{task.priority}}</p>
-            <p><strong>Start Date:</strong> {{task.start_date}}</p>
-            <p><strong>Due Date:</strong> {{task.due_date}}</p>
-            <p><strong>Days Since Start:</strong> {{task.days_counter}}</p>
-            <p><strong>Progress:</strong> {{task.progress}}</p>
-            <a href="{{url_for('edit_task', task_id=task.task_id)}}" class="btn btn-outline-warning">Edit Task</a>
-            <a href="{{url_for('dashboard')}}" class="btn btn-outline-success">Back to Dashboard</a>
+        <section class="container-xxl mb-3 mt-5">
+            <div class="row">
+                <div class="col-12 col-lg-8 offset-lg-2 mb-4">
+                    <div class="p-3 border border-success-subtle rounded bg-secondary-subtle" style="box-shadow: 0 0 21px 13px var(--bs-success-bg-subtle)">
+                        <h2 class="mb-4 text-decoration-underline text-center fw-lighter">Task: {{task.title}}</h2>
+                        <div class="row">
+                            <div class="col mt-2 text-end text-success-emphasis fw-bold">
+                                <p>Assigned To:</p>
+                                <p>Description:</p>
+                                <p>Priority:</p>
+                                <p>Start Date:</p>
+                                <p>Due Date:</p>
+                                <p>Days Since Start:</p>
+                                <p>Progress:</p>
+                            </div>
+                            <div class="vr text-success-emphasis p-1"></div>
+                            <div class="col mt-2 text-warning-emphasis fw-light">
+                                <p>{{task.assigned_to}}</p>
+                                <p>{{task.description}}</p>
+                                <p>{{task.priority}}</p>
+                                <p>{{task.start_date}}</p>
+                                <p>{{task.due_date}}</p>
+                                <p>{{task.days_counter}}</p>
+                                <p>{{task.progress}}</p>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col">
+                                <a href="{{url_for('dashboard')}}" class="btn btn-outline-light w-100">Back to Dashboard</a>
+                            </div>
+                            <div class="col">
+                                <a href="{{url_for('edit_task', task_id=task.task_id)}}" class="btn btn-outline-info w-100">Edit Task</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <hr class="border-warning border-3">
@@ -115,7 +140,7 @@
                     </div>
                 </div>
                 <div class="col">
-                    <img src="TaskFocusPrime.png" alt="TaskFocusPrime" width="144">
+                    <img src="../TaskFocusPrime.png" alt="TaskFocusPrime" width="144">
                 </div>
                 <div class="p-2 col">
                     <div class="row text-center">

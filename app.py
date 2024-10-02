@@ -24,12 +24,16 @@ class Task(db.Model):
     def days_counter(self):
         return (date.today() - self.start_date).days
 
+# Home route
+@app.route('/')
+def home():
+    return render_template('index.html')
 
 # Dashboard route
 @app.route('/dashboard')
 def dashboard():
-    # tasks = Task.query.all()
-    tasks = [{"title": "Task 1", "progress": 50}, {"title": "Task 2", "progress": 80}]
+    tasks = Task.query.all()
+    # tasks = [{"title": "Task 1", "progress": 50}, {"title": "Task 2", "progress": 80}]
     return render_template('dashboard.html', tasks=tasks)
 
 # Create task route

@@ -1,0 +1,68 @@
+Users:
+    Jane Doe
+    jane.doe@example.com
+    1234567890
+    contact_phone
+
+
+    John Doe
+    john.doe@example.com
+    9876543210
+    contact_phone
+    contact_email
+
+
+UserAccounts:
+    Jane$D0e
+    J0hnH@$myH3@r+
+
+    johnnyB0y87!
+    MaryJ@n3Do3sn+Kn03
+
+Tasks:
+    Laundry
+    Jane
+    Separate clothes, wash, and dry
+    today's date
+    progress 25
+
+    Dishes
+    Jane
+    Scrub dishes and load dishwasher
+    today's date
+    progress 0
+
+    Dinner
+    Jane
+    Defrost meat, prepare veggies, cook food, and plate dinner
+    today's date
+    progress 75
+
+
+    Trash
+    John
+    Task trash to curb
+    today's date
+    progress 0
+
+    Lawn
+    John
+    Weedeat, cut grass, and set sprinklers
+    tomorrow's date
+    progress 0
+
+    Self-Care
+    John
+    Shower, brush teeth, and shave
+    today's date
+    progress 100
+
+
+
+{% set ns = namespace(c = 0) %}
+
+{% for task in tasks %}
+    {% set ns.c = ns.c + 1 %}
+{% endfor %}
+
+

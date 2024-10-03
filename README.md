@@ -51,7 +51,7 @@ Welcome to the Task Management Application, a user-friendly and efficient tool d
     - Visual indicators of task completion, motivating users to finish their tasks.
 
 3. **Intuitive Color Adjustments:**
-    - Color-coded tasks based on priority and progress levels for easy identification.
+    - Color-coded task priority and progress levels for easy identification.
 
 4. **Embedded Collaboration Links:**
     - Convenient links to tools like Microsoft Teams, Slack, Discord, Dropbox, Google, and GitHub.

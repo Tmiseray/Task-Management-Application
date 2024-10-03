@@ -59,26 +59,26 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="/">Home</a>
+                            <a class="nav-link text-success-emphasis" href="/">Home</a>
                         </li>
                         <div class="vr text-warning-emphasis p-0"></div>
                         <li class="nav-item">
-                            <a class="nav-link" href="/dashboard">Dashboard</a>
+                            <a class="nav-link text-success-emphasis" href="/dashboard">Dashboard</a>
                         </li>
                         <div class="vr text-warning-emphasis p-0"></div>
                         <li class="nav-item">
-                            <a class="nav-link" href="/task/create">Task Creation</a>
+                            <a class="nav-link text-success-emphasis" href="/task/create">Task Creation</a>
                         </li>
                         <div class="vr text-warning-emphasis p-0"></div>
                         <li class="nav-item">
-                            <a class="nav-link" href="/register">Register</a>
+                            <a class="nav-link text-success-emphasis" href="/register">Register</a>
                         </li>
                         <div class="vr text-warning-emphasis p-0"></div>
                         <div>
                             {% if session['logged_in'] == True %}
-                              <li class="nav-item"><a class="nav-link" href="/logout">Logout<svg class="bi bi-box-arrow-right p-1" width="30" height="30" fill="currentColor"><use xlink:href="#logout-icon"/></svg></a></li>
+                              <li class="nav-item"><a class="nav-link text-success-emphasis" href="/logout">Logout<svg class="bi bi-box-arrow-right p-1" width="30" height="30" fill="currentColor"><use xlink:href="#logout-icon"/></svg></a></li>
                             {% else %}
-                              <li class="nav-item"><a class="nav-link" href="/login">Login<svg class="bi bi-box-arrow-in-right p-1" width="30" height="30" fill="currentColor"><use xlink:href="#login-icon"/></svg></a></li>
+                              <li class="nav-item"><a class="nav-link text-success-emphasis" href="/login">Login<svg class="bi bi-box-arrow-in-right p-1" width="30" height="30" fill="currentColor"><use xlink:href="#login-icon"/></svg></a></li>
                             {% endif %}
                         </div>
                     </ul>
@@ -106,61 +106,62 @@
 
         <hr class="border-warning border-3 ms-3">
 
-        <section id="features" class="container my-5 p-3 mb-5 rounded bg-success-subtle" style="box-shadow: 0 0 21px 3px rgba(102, 104, 0, 0.349)">
+        <section id="features" class="container my-5 p-3 mb-5 border border-success-subtle rounded bg-secondary-subtle" style="box-shadow: 0 0 21px 13px var(--bs-success-bg-subtle)">
             <h2 class="mb-4 text-decoration-underline text-center fw-light">Features</h2>
-            <div class="row row-cols-md-4 mb-5 g-4">
-                <div class="col">
-                    <div class="card border border-warning-subtle bg-warning-subtle text-center">
-                        <img class="card-img-top" src="" alt="Feature 1">
+            <div class="row row-cols-md-4 mb-4 g-4">
+                <div class="col-12">
+                    <div class="card border border-warning-subtle rounded bg-black" style="box-shadow: 0 0 13px 7px rgba(102, 104, 0, 0.349)">
+                        <img class="card-img-top img-fluid" src="{{ url_for('static', filename='organization.avif') }}" alt="Feature 1">
                         <div class="card-body">
-                            <p class="card-text fw-lighter">
-
+                            <h3 class="card-title h4 fw-light text-center text-info-emphasis text-decoration-underline mb-4 mt-1">Organization</h3>
+                            <p class="card-text text-success-emphasis">
+                                Effortlessly organize your tasks with our intuitive dashboard that offers a clear overview of your workload. Each task is categorized based on its status, ensuring that you can easily distinguish between completed tasks and those still in progress. This streamlined organization allows you to focus on what matters most, providing a clutter-free space to manage your responsibilities effectively. With just a glance, you can prioritize your efforts and navigate through your tasks with confidence.
                             </p>
-                        </div>
-                        <div class="card-footer">
-                            <h3 class="h4 fw-light mt-1">Organization</h3>
                         </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="card border border-warning-subtle bg-warning-subtle text-center">
-                        <img class="card-img-top" src="" alt="Feature 1">
+                <div class="col-12">
+                    <div class="card border border-warning-subtle rounded bg-black" style="box-shadow: 0 0 13px 7px rgba(102, 104, 0, 0.349)">
+                        <img class="card-img-top img-fluid" src="{{ url_for('static', filename='priority-colors.png') }}" alt="Feature 2">
                         <div class="card-body">
-                            <p class="card-text fw-lighter">
-
+                            <h3 class="card-title h4 fw-light text-center text-info-emphasis text-decoration-underline mb-4 mt-1">Prioritization</h3>
+                            <p class="card-text text-success-emphasis">
+                                Our task management system empowers you to prioritize your tasks with precision. Assign priority levels—Low, Medium, or High—to each task, allowing you to focus your energy where it&#39;s needed most. This feature not only helps you manage your time efficiently but also ensures that critical tasks receive the attention they deserve. By visually representing priority levels, you can quickly assess your workload and tackle high-impact tasks first, enhancing your productivity and time management skills.
                             </p>
-                        </div>
-                        <div class="card-footer">
-                            <h3 class="h4 fw-light mt-1">Prioritization</h3>
                         </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="card border border-warning-subtle bg-warning-subtle text-center">
-                        <img class="card-img-top" src="" alt="Feature 1">
+                <div class="col-12">
+                    <div class="card border border-warning-subtle rounded bg-black" style="box-shadow: 0 0 13px 7px rgba(102, 104, 0, 0.349)">
+                        <img class="card-img-top img-fluid" src="{{ url_for('static', filename='progress-bars.png') }}" alt="Feature 3">
                         <div class="card-body">
-                            <p class="card-text fw-lighter">
-
+                            <h3 class="card-title h4 fw-light text-center text-info-emphasis text-decoration-underline mb-4 mt-1">Progress Tracking</h3>
+                            <p class="card-text text-success-emphasis">
+                                Stay motivated and on track with our interactive progress tracking feature. An animated progress bar dynamically adjusts as you complete your tasks, giving you a visual representation of your achievements. This engaging tool helps you monitor your progress in real-time, turning task completion into a satisfying experience. Whether you're nearing the finish line or just starting out, you&#39;ll always have a clear view of how far you&#39;ve come, making it easier to stay committed to your goals.
                             </p>
-                        </div>
-                        <div class="card-footer">
-                            <h3 class="h4 fw-light mt-1">Progress Tracking</h3>
                         </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="card border border-warning-subtle bg-warning-subtle text-center">
-                        <img class="card-img-top" src="" alt="Feature 1">
+                <div class="col-12">
+                    <div class="card border border-warning-subtle rounded bg-black" style="box-shadow: 0 0 13px 7px rgba(102, 104, 0, 0.349)">
+                        <img class="card-img-top img-fluid" src="{{ url_for('static', filename='collaboration1.jpg') }}" alt="Feature 4">
                         <div class="card-body">
-                            <p class="card-text fw-lighter">
-
+                            <h3 class="card-title h4 fw-light text-center text-info-emphasis text-decoration-underline mb-4 mt-1">Collaboration</h3>
+                            <p class="card-text text-success-emphasis">
+                                Collaboration is made seamless with our integrated communication tools. Easily connect with teammates through convenient footer links to popular platforms such as Microsoft Teams, Discord, Slack, Dropbox, Google, and GitHub. This feature fosters a collaborative environment where you can share updates, exchange ideas, and streamline workflows without ever leaving the task management system. Enhance teamwork and ensure everyone is on the same page, facilitating effective collaboration that drives project success.
                             </p>
-                        </div>
-                        <div class="card-footer">
-                            <h3 class="h4 fw-light mt-1">Collaboration</h3>
                         </div>
                     </div>
                 </div>
+            </div>
+            <br>
+            <hr class="border-warning border-3">
+            <div class="row ms-5 me-5 mb-3 p-4">
+                <p class="h4 fw-light text-center text-info rounded-circle" style="box-shadow: 0 0 21px 21px rgba(102, 104, 0, 0.349)">
+                    <br><br>
+                    These features come together to create a <strong>powerful</strong> task management system designed to help you stay organized, prioritize effectively, track your progress, and collaborate <i>effortlessly</i> with your team.
+                    <br><br><br>
+                </p>
             </div>
             <div class="row mb-2">
                 <a class="btn btn-outline-warning btn-lg" href="registration.html">Register Now</a>

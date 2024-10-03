@@ -57,12 +57,3 @@ Tasks:
     today's date
     progress 100
 
-
-
-{% set ns = namespace(c = 0) %}
-
-{% for task in tasks %}
-    {% set ns.c = ns.c + 1 %}
-{% endfor %}
-
-

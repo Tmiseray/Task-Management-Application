@@ -13,4 +13,4 @@ my_secret_key = key1
 
 
 
-my_password = 'D!Vincenz022'
+my_password = 'your-password-goes-here'

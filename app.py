@@ -242,6 +242,7 @@ def login():
                 session['logged_in'] = True
                 return redirect(url_for('dashboard'))
         return render_template('login.html', message='Invalid username or password')
+    return redirect(url_for('register_user'))
           
 # Logout Route
 @app.route('/logout')

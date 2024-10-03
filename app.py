@@ -1,14 +1,12 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 from flask_sqlalchemy import SQLAlchemy
-from jinja2 import FileSystemLoader
 from flask_marshmallow import Marshmallow
 from flask_bcrypt import bcrypt
-# from enum import Enum
 from marshmallow import fields
 from datetime import date, timedelta
 from password import my_password, my_secret_key
 
-# loader = FileSystemLoader('templates')
+
 app = Flask(__name__, template_folder = 'templates')
 app.jinja_env.auto_reload = True
 app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql+mysqlconnector://root:{my_password}@localhost/task_manager_db'

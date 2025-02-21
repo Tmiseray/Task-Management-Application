@@ -2,6 +2,8 @@
 
 A comprehensive task management solution built with Flask and Bootstrap, designed to help users organize and track their tasks efficiently.
 
+![image](https://github.com/user-attachments/assets/d0058acb-0f41-4ab3-a953-044008805b75)
+
 ## Table of Contents
 - [Features](#features)
 - [Technologies Used](#technologies-used)
